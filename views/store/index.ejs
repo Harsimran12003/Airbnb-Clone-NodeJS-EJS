@@ -22,7 +22,12 @@
                   <span class="text-gray-700"><%= home.rating %></span>
                 </div>
               </div>
-              <button class="bg-green-300 p-2">Book</button>
+              <button 
+                class="bg-green-300 p-2"
+                <% if (!isLoggedIn) { %>
+                  onclick="alert('Please log in or sign up to continue.'); return false;"
+                <% } %>
+              >Book</button>
             </div>
           </div>
         <% }) %>
